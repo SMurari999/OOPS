@@ -1,0 +1,185 @@
+1. CLASS AND OBJECT
+
+class Car {
+    String brand;
+    int speed;
+
+    void showDetails() {
+        System.out.println("Brand: " + brand + ", Speed: " + speed);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();  // Object creation
+        myCar.brand = "Toyota";
+        myCar.speed = 120;
+        myCar.showDetails();
+    }
+}
+
+2. Encapsulation
+class Person {
+    private String name;
+
+    public void setName(String name) {  // Setter
+        this.name = name;
+    }
+
+    public String getName() {  // Getter
+        return name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.setName("John");
+        System.out.println(p.getName());
+    }
+}
+
+3. Inheritance
+class Animal {
+    void sound() {
+        System.out.println("Animals make sounds");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();  // Inherited method
+        d.bark();
+    }
+}
+
+4. Polymorphism
+
+Method Overloading (Compile-time Polymorphism)
+
+class MathOperations {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOperations obj = new MathOperations();
+        System.out.println(obj.add(5, 10));
+        System.out.println(obj.add(5.5, 10.2));
+    }
+}
+
+Method Overriding (Runtime Polymorphism)
+
+class Parent {
+    void show() {
+        System.out.println("Parent class method");
+    }
+}
+
+class Child extends Parent {
+    void show() {
+        System.out.println("Child class method");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent p = new Child();  // Upcasting
+        p.show();  // Calls Child's overridden method
+    }
+}
+5. Abstraction
+
+Abstract Class
+
+abstract class Vehicle {
+    abstract void start();  // Abstract method
+
+    void stop() {
+        System.out.println("Vehicle stopped");
+    }
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car starts with key");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v = new Car();
+        v.start();
+        v.stop();
+    }
+}
+
+Interface
+
+interface Animal {
+    void makeSound();
+}
+
+class Cat implements Animal {
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Cat();
+        a.makeSound();
+    }
+}
+
+6. Association
+
+class Driver {
+    String name;
+
+    Driver(String name) {
+        this.name = name;
+    }
+}
+
+class Bus {
+    String brand;
+    Driver driver;
+
+    Bus(String brand, Driver driver) {
+        this.brand = brand;
+        this.driver = driver;
+    }
+
+    void showDetails() {
+        System.out.println("Bus brand: " + brand + ", Driver name: " + driver.name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Driver d = new Driver("John");
+        Bus b = new Bus("Volvo", d);
+        b.showDetails();
+    }
+}
+
+
+
+
+
