@@ -181,5 +181,103 @@ public class Main {
 
 
 
+### Explanation of the Code (Encapsulation in Java)
+
+This Java program demonstrates **Encapsulation**, which is one of the four main principles of **Object-Oriented Programming (OOP)**. Encapsulation involves **hiding the internal details** of a class and only exposing necessary functionalities through **getter** and **setter** methods.
+
+---
+
+### **Step-by-Step Explanation**
+
+#### **1. Class Declaration**
+```java
+class Person {
+```
+- This defines a class named `Person`.
+- A **class** is a blueprint for creating objects.
+
+#### **2. Private Instance Variable**
+```java
+private String name;
+```
+- Declares a **private** variable `name` of type `String`.
+- The `private` access modifier **restricts direct access** to this variable from outside the class.
+- This is the key concept of **Encapsulation**—hiding the data from direct modification.
+
+#### **3. Setter Method**
+```java
+public void setName(String name) {  
+    this.name = name;
+}
+```
+- This method is called a **setter**.
+- It allows controlled modification of the `name` variable.
+- `this.name = name;` assigns the method parameter `name` to the instance variable `name`.
+
+#### **4. Getter Method**
+```java
+public String getName() {  
+    return name;
+}
+```
+- This method is called a **getter**.
+- It **returns** the value of the `name` variable to the caller.
+- Since `name` is `private`, this method is the only way to access its value from outside the class.
+
+---
+
+### **Main Class and Execution**
+
+#### **5. Main Class Declaration**
+```java
+public class Main {
+```
+- Defines a `Main` class where execution starts.
+
+#### **6. main Method**
+```java
+public static void main(String[] args) {
+```
+- This is the entry point of the Java program.
+
+#### **7. Creating an Object**
+```java
+Person p = new Person();
+```
+- Creates an object `p` of the `Person` class.
+- The `new` keyword is used to allocate memory for the object.
+
+#### **8. Setting the Value**
+```java
+p.setName("John");
+```
+- Calls the `setName` method on `p` and assigns `"John"` to the `name` variable.
+
+#### **9. Getting and Printing the Value**
+```java
+System.out.println(p.getName());
+```
+- Calls `getName()` to retrieve the value of `name`.
+- Prints `"John"` to the console.
+
+---
+
+### **Final Output**
+```
+John
+```
+
+---
+
+### **Key Takeaways**
+1. **Encapsulation** protects the data by making variables `private` and providing `public` getter and setter methods.
+2. The **getter (`getName()`)** allows reading the value of `name`.
+3. The **setter (`setName()`)** allows modifying the value of `name` with control.
+4. Objects must **use these methods** to interact with private data.
+
+This is a standard way of implementing encapsulation in Java, ensuring **data security** and **maintainability**. 🚀
+
+
+
 
 
